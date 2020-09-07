@@ -10,6 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= render partial: "home/header" %>
+    <div class="container" style="min-height: 500px;">
+      <%= yield %>
+    </div>
+    <%= render partial: "home/footer" %>
   </body>
 </html>
